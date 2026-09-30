@@ -10,6 +10,14 @@ CREATE TABLE IF NOT EXISTS jokes (
   jokeType VARCHAR(50) NOT NULL
 );
 
+-- Tabla de usuarios para autenticación JWT
+CREATE TABLE IF NOT EXISTS users (
+  id            SERIAL PRIMARY KEY,
+  username      VARCHAR(50)  UNIQUE NOT NULL,
+  password_hash TEXT NOT NULL,
+  created_at    TIMESTAMPTZ DEFAULT NOW()
+);
+
 -- Insertar las 100 bromas del dataset original
 INSERT INTO jokes (jokeText, jokeType) VALUES
   ('Why don''t scientists trust atoms? Because they make up everything.', 'Science'),
