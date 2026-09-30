@@ -1,23 +1,23 @@
 import { useState, useEffect } from 'react';
 import RandomTab from './components/RandomTab.jsx';
 import FilterTab from './components/FilterTab.jsx';
-import AddTab    from './components/AddTab.jsx';
+import AddTab from './components/AddTab.jsx';
 import ManageTab from './components/ManageTab.jsx';
-import AuthTab   from './components/AuthTab.jsx';
+import AuthTab from './components/AuthTab.jsx';
 import { useToast, ToastContainer } from './utils.jsx';
 import { getToken, setToken } from './api.js';
 
 const TABS = [
-  { id: 'random', label: '🎲 Aleatoria' },
-  { id: 'filter', label: '🔍 Filtrar'   },
-  { id: 'add',    label: '➕ Agregar'   },
-  { id: 'manage', label: '🛠️ Gestionar' },
+  { id: 'random', label: 'Aleatoria' },
+  { id: 'filter', label: 'Filtrar' },
+  { id: 'add', label: 'Agregar' },
+  { id: 'manage', label: 'Gestionar' },
 ];
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('random');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const { toasts, addToast }      = useToast();
+  const { toasts, addToast } = useToast();
 
   useEffect(() => {
     // Check initial token
@@ -36,7 +36,7 @@ export default function App() {
       <header className="header">
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            <span className="header-logo" aria-hidden="true">😄</span>
+            <span className="header-logo" aria-hidden="true"></span>
             <div>
               <h1 className="header-title">Banco de Bromas</h1>
               <p className="header-subtitle">¡El mejor lugar para reír en familia!</p>
@@ -94,7 +94,7 @@ export default function App() {
 
       {/* ===== FOOTER ===== */}
       <footer className="footer">
-        <p>Banco de Bromas &copy; {new Date().getFullYear()} — Hecho con 😄 y React</p>
+        <p>Banco de Bromas &copy; {new Date().getFullYear()} — Hecho React</p>
       </footer>
 
       {/* ===== TOASTS ===== */}

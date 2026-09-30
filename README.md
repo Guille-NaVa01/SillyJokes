@@ -1,4 +1,4 @@
-# 😄 Banco de Bromas (SillyJokes)
+# Banco de Bromas (SillyJokes)
 
 Bienvenido a **Banco de Bromas**, una aplicación web interactiva que te permite explorar, añadir, editar y eliminar bromas. ¡El mejor lugar para reír en familia!
 
@@ -6,7 +6,7 @@ La aplicación está protegida mediante un sistema de **autenticación por token
 
 ---
 
-## 🏗️ Arquitectura del Proyecto
+## Arquitectura del Proyecto
 
 El proyecto está construido con un enfoque moderno en tres capas, todo contenido (containerizado) usando Docker:
 

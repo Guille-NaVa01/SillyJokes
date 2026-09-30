@@ -8,6 +8,7 @@ export const JOKE_TYPES = [
   'Pun',
   'Dad Joke',
   'Knock-Knock',
+  'Movies',
   'Animal',
   'Food',
   'Sports',
@@ -18,14 +19,15 @@ export const JOKE_TYPES = [
 export function typeEmoji(type = '') {
   const map = {
     programming: '💻',
-    math:        '🔢',
-    science:     '🔬',
-    pun:         '🥁',
-    'dad joke':  '👨',
+    math: '🔢',
+    science: '🔬',
+    pun: '🥁',
+    'dad joke': '👨',
     'knock-knock': '🚪',
-    animal:      '🐾',
-    food:        '🍕',
-    sports:      '⚽',
+    movies: '🎬',
+    animal: '🐾',
+    food: '🍕',
+    sports: '⚽',
   };
   return map[type.toLowerCase()] || '😄';
 }
@@ -34,14 +36,15 @@ export function typeEmoji(type = '') {
 export function typeBadgeClass(type = '') {
   const map = {
     programming: 'badge-blue',
-    math:        'badge-blue',
-    science:     'badge-blue',
-    pun:         'badge-yellow',
-    'dad joke':  'badge-yellow',
+    math: 'badge-blue',
+    science: 'badge-blue',
+    pun: 'badge-yellow',
+    'dad joke': 'badge-yellow',
     'knock-knock': 'badge-orange',
-    animal:      'badge-green',
-    food:        'badge-green',
-    sports:      'badge-orange',
+    movies: 'badge-orange',
+    animal: 'badge-green',
+    food: 'badge-green',
+    sports: 'badge-orange',
   };
   return map[type.toLowerCase()] || 'badge-yellow';
 }
@@ -65,9 +68,9 @@ export function ToastContainer({ toasts }) {
     <div className="toast-container" role="status" aria-live="polite">
       {toasts.map(t => (
         <div key={t.id} className={`toast toast-${t.type}`}>
-          {t.type === 'success' && '✅ '}
-          {t.type === 'error'   && '❌ '}
-          {t.type === 'info'    && 'ℹ️ '}
+          {t.type === 'success'}
+          {t.type === 'error'}
+          {t.type === 'info'}
           {t.message}
         </div>
       ))}
