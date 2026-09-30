@@ -4,8 +4,8 @@ import { JOKE_TYPES, typeEmoji, typeBadgeClass } from '../utils.jsx';
 
 // ---- Edit Modal ----
 function EditModal({ joke, onClose, onSaved, onToast }) {
-  const [text, setText]     = useState(joke.joketext || '');
-  const [type, setType]     = useState(joke.joketype || '');
+  const [text, setText] = useState(joke.joketext || '');
+  const [type, setType] = useState(joke.joketype || '');
   const [loading, setLoading] = useState(false);
 
   async function handleSave(e) {
@@ -83,7 +83,7 @@ function DeleteModal({ joke, onClose, onDeleted, onToast }) {
   return (
     <div className="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="delete-modal-title">
       <div className="modal">
-        <h3 id="delete-modal-title" className="modal-title">🗑️ Eliminar broma</h3>
+        <h3 id="delete-modal-title" className="modal-title">Eliminar broma</h3>
         <p style={{ color: 'var(--gray-600)', marginBottom: '0.75rem' }}>
           ¿Seguro que quieres eliminar esta broma?
         </p>
@@ -93,7 +93,7 @@ function DeleteModal({ joke, onClose, onDeleted, onToast }) {
         <div className="modal-actions">
           <button type="button" className="btn btn-secondary" onClick={onClose}>Cancelar</button>
           <button id="btn-delete-confirm" type="button" className="btn btn-delete" onClick={handleDelete} disabled={loading}>
-            {loading ? '⏳' : '🗑️ Eliminar'}
+            {loading ? 'Cargando...' : 'Eliminar'}
           </button>
         </div>
       </div>
@@ -103,11 +103,11 @@ function DeleteModal({ joke, onClose, onDeleted, onToast }) {
 
 // ---- Main Tab ----
 export default function ManageTab({ onToast }) {
-  const [jokeId, setJokeId]     = useState('');
-  const [joke, setJoke]         = useState(null);
-  const [loading, setLoading]   = useState(false);
+  const [jokeId, setJokeId] = useState('');
+  const [joke, setJoke] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [editOpen, setEditOpen] = useState(false);
-  const [delOpen, setDelOpen]   = useState(false);
+  const [delOpen, setDelOpen] = useState(false);
 
   async function handleSearch(e) {
     e.preventDefault();
@@ -140,7 +140,7 @@ export default function ManageTab({ onToast }) {
   return (
     <section aria-labelledby="manage-title">
       <h2 id="manage-title" className="section-title">
-        🛠️ Buscar y gestionar
+        Buscar y gestionar
       </h2>
 
       {/* Search by ID */}
@@ -160,7 +160,7 @@ export default function ManageTab({ onToast }) {
               />
             </div>
             <button id="btn-search-id" type="submit" className="btn btn-primary" disabled={loading}>
-              {loading ? '⏳' : '🔎 Buscar'}
+              {loading ? 'Cargando...' : 'Buscar'}
             </button>
           </div>
         </form>
@@ -179,10 +179,10 @@ export default function ManageTab({ onToast }) {
           </div>
           <div className="joke-actions">
             <button id="btn-open-edit" className="btn btn-edit" onClick={() => setEditOpen(true)}>
-              ✏️ Editar
+              Editar
             </button>
             <button id="btn-open-delete" className="btn btn-delete" onClick={() => setDelOpen(true)}>
-              🗑️ Eliminar
+              Eliminar
             </button>
           </div>
         </div>

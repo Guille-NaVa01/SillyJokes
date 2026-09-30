@@ -35,6 +35,7 @@ El proyecto está construido con un enfoque moderno en tres capas, todo contenid
 
 Asegúrate de tener **Docker** (y Docker Compose) instalado y corriendo en tu computadora.
 
+0.5. Si modificaste el frontend: npm run build
 1. Abre tu terminal y navega a la carpeta principal del proyecto.
 2. Ejecuta el siguiente comando para construir las imágenes y levantar los contenedores en segundo plano:
    ```bash

@@ -13,7 +13,7 @@ export default function AuthTab({ onToast, onLogin }) {
       onToast('Por favor, completa todos los campos', 'info');
       return;
     }
-    
+
     setLoading(true);
     try {
       if (isLogin) {
@@ -35,7 +35,7 @@ export default function AuthTab({ onToast, onLogin }) {
   return (
     <section aria-labelledby="auth-title">
       <h2 id="auth-title" className="section-title">
-        {isLogin ? '🔐 Iniciar Sesión' : '📝 Registrarse'}
+        {isLogin ? 'Iniciar Sesión' : 'Registrarse'}
       </h2>
 
       <div className="card">
@@ -66,12 +66,12 @@ export default function AuthTab({ onToast, onLogin }) {
             {loading ? '⏳...' : (isLogin ? 'Iniciar Sesión' : 'Registrarse')}
           </button>
         </form>
-        
+
         <p style={{ marginTop: '1rem', textAlign: 'center', fontSize: '0.9rem' }}>
           {isLogin ? '¿No tienes cuenta?' : '¿Ya tienes cuenta?'}
-          <button 
-            type="button" 
-            className="btn btn-secondary" 
+          <button
+            type="button"
+            className="btn btn-secondary"
             style={{ marginLeft: '0.5rem', padding: '0.2rem 0.5rem' }}
             onClick={() => setIsLogin(!isLogin)}
           >

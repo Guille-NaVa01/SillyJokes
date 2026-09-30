@@ -3,7 +3,7 @@ import { getRandomJoke } from '../api';
 import { typeEmoji, typeBadgeClass } from '../utils.jsx';
 
 export default function RandomTab({ onToast }) {
-  const [joke, setJoke]       = useState(null);
+  const [joke, setJoke] = useState(null);
   const [loading, setLoading] = useState(false);
 
   async function handleRandom() {
@@ -21,7 +21,7 @@ export default function RandomTab({ onToast }) {
   return (
     <section aria-labelledby="random-title">
       <h2 id="random-title" className="section-title">
-        🎲 Broma aleatoria
+        Broma aleatoria
       </h2>
 
       <div className="random-hero">
@@ -39,7 +39,7 @@ export default function RandomTab({ onToast }) {
           </>
         ) : (
           <p style={{ color: 'var(--gray-500)', fontWeight: 700, fontSize: '1.05rem' }}>
-            Pulsa el botón para recibir una broma 🎉
+            Pulsa el botón para recibir una broma
           </p>
         )}
       </div>
@@ -50,7 +50,7 @@ export default function RandomTab({ onToast }) {
         onClick={handleRandom}
         disabled={loading}
       >
-        {loading ? '⏳ Cargando…' : '😂 ¡Dame una broma!'}
+        {loading ? '⏳ Cargando…' : '¡Dame una broma!'}
       </button>
     </section>
   );

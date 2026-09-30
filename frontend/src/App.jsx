@@ -94,7 +94,7 @@ export default function App() {
 
       {/* ===== FOOTER ===== */}
       <footer className="footer">
-        <p>Banco de Bromas &copy; {new Date().getFullYear()} — Hecho React</p>
+        <p>Banco de Bromas &copy; {new Date().getFullYear()} — Hecho en React</p>
       </footer>
 
       {/* ===== TOASTS ===== */}

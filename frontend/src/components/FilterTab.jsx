@@ -4,9 +4,9 @@ import { JOKE_TYPES, typeEmoji, typeBadgeClass } from '../utils.jsx';
 
 export default function FilterTab({ onToast }) {
   const [selectedType, setSelectedType] = useState('');
-  const [jokes, setJokes]               = useState([]);
-  const [loading, setLoading]           = useState(false);
-  const [searched, setSearched]         = useState(false);
+  const [jokes, setJokes] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [searched, setSearched] = useState(false);
 
   async function handleFilter(e) {
     e.preventDefault();
@@ -26,7 +26,7 @@ export default function FilterTab({ onToast }) {
   return (
     <section aria-labelledby="filter-title">
       <h2 id="filter-title" className="section-title">
-        🔍 Filtrar por tipo
+        Filtrar por tipo
       </h2>
 
       <form onSubmit={handleFilter} className="card" style={{ marginBottom: '1.5rem' }}>
@@ -46,7 +46,7 @@ export default function FilterTab({ onToast }) {
             </select>
           </div>
           <button id="btn-filter" type="submit" className="btn btn-primary" disabled={loading}>
-            {loading ? '⏳' : '🔍 Buscar'}
+            {loading ? 'Cargando...' : 'Buscar'}
           </button>
         </div>
       </form>

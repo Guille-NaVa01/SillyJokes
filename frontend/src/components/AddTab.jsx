@@ -5,13 +5,13 @@ import { JOKE_TYPES, typeEmoji } from '../utils.jsx';
 export default function AddTab({ onToast }) {
   const [jokeText, setJokeText] = useState('');
   const [jokeType, setJokeType] = useState('');
-  const [loading, setLoading]   = useState(false);
+  const [loading, setLoading] = useState(false);
   const [lastAdded, setLastAdded] = useState(null);
 
   async function handleSubmit(e) {
     e.preventDefault();
     if (!jokeText.trim()) { onToast('Escribe la broma primero 😅', 'info'); return; }
-    if (!jokeType)        { onToast('Elige un tipo de broma', 'info'); return; }
+    if (!jokeType) { onToast('Elige un tipo de broma', 'info'); return; }
 
     setLoading(true);
     try {
@@ -30,7 +30,7 @@ export default function AddTab({ onToast }) {
   return (
     <section aria-labelledby="add-title">
       <h2 id="add-title" className="section-title">
-        ➕ Agregar broma
+        Agregar broma
       </h2>
 
       <div className="card">
@@ -42,7 +42,7 @@ export default function AddTab({ onToast }) {
             <textarea
               id="new-joke-text"
               className="form-textarea"
-              placeholder="¿Por qué los programadores prefieren el modo oscuro? Porque la luz atrae a los bugs 🐛"
+              placeholder="¿Por qué los programadores prefieren el modo oscuro? Porque la luz atrae a los bugs"
               value={jokeText}
               onChange={e => setJokeText(e.target.value)}
               rows={3}
@@ -72,7 +72,7 @@ export default function AddTab({ onToast }) {
             className="btn btn-primary btn-lg btn-block"
             disabled={loading}
           >
-            {loading ? '⏳ Guardando…' : '✨ Agregar broma'}
+            {loading ? 'Guardando…' : 'Agregar broma'}
           </button>
         </form>
       </div>
@@ -80,7 +80,7 @@ export default function AddTab({ onToast }) {
       {lastAdded && (
         <div className="card" style={{ borderColor: 'var(--green)', background: 'var(--green-light)' }}>
           <p style={{ fontWeight: 700, color: 'var(--green-dark)', marginBottom: '0.4rem' }}>
-            ✅ Última broma agregada (ID: {lastAdded.id})
+            Última broma agregada (ID: {lastAdded.id})
           </p>
           <p style={{ color: 'var(--gray-700)' }}>{lastAdded.joketext}</p>
         </div>
